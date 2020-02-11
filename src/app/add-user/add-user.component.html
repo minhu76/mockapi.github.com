@@ -1,0 +1,46 @@
+<div class="example-container mt-5">
+  <h3 class="text-center">Add Users</h3>
+  <form
+    class="example-container"
+    [formGroup]="validators"
+    (ngSubmit)="onSubmit()"
+  >
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Enter your First Name"
+        formControlName="firstName"
+        required
+      />
+      <mat-error *ngIf="validators.controls.firstName.invalid">{{
+        getErrorMessage("first")
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Enter your Last Name"
+        formControlName="lastName"
+        required
+      />
+      <mat-error *ngIf="validators.controls.lastName.invalid">{{
+        getErrorMessage("last")
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Enter your address"
+        formControlName="address"
+        required
+      />
+      <mat-error *ngIf="validators.controls.address.invalid">{{
+        getErrorMessage("address")
+      }}</mat-error>
+    </mat-form-field>
+    <button mat-button [disabled]="!validators.valid" type="submit">Submit</button>
+    <button class="mr-3" routerLink="/" mat-raised-button color="accent">
+      Back
+    </button>
+  </form>
+</div>

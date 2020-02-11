@@ -1,0 +1,21 @@
+<mat-card class="example-card">
+  <mat-card-header>
+  <div mat-card-avatar class="example-header-image">
+      <img
+        [src]="detailUser.avatar"
+        style="width: 50px;"
+        class="rounded-circle img-thumbnail"
+      />
+    </div>  
+    <mat-card-title>Detail User</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="detailUser.avatar" />
+  <mat-card-content>
+    <p>{{ detailUser.name }}</p>  
+  </mat-card-content>
+  <mat-card-actions>
+    <i class="material-icons" style="color: #ffffff">shopping_cart</i>    
+    <button routerLink="/shopping-cart/{{detailUser.id}}" mat-button>Shopping-Cart</button>
+  </mat-card-actions>
+</mat-card>
